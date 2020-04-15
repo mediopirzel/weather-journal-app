@@ -2,7 +2,7 @@
 // EXAMPLE API KEY https://api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={your api key}
 
 const urlAPI = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-const key = ',es&appid=300964441d9ac24a633de4475b182466'; // country + key
+const key = '&appid=300964441d9ac24a633de4475b182466'; // country + key
 
 const date = document.getElementById('date');
 const temp = document.getElementById('temp');
