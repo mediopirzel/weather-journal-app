@@ -26,6 +26,7 @@ body{
 
 .entry{
     background: rgba(59, 74, 107, .4);
+    padding: 0.5em 1em;
 }
 
 #entryHolder{
@@ -50,6 +51,15 @@ body{
 .title{
 
 }
+
+.label-holder {
+    opacity: 0;
+}
+
+.show-labels .label-holder {
+    opacity: 1;
+}
+
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
