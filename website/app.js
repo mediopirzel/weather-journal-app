@@ -32,7 +32,7 @@ const getAPIdata = async (url='') => {
 }
 
 
-//POST DATA revieved
+//POST DATA 
 const postData = async (url='', data = {}) => {
     //console.log('begininig postData');
     //console.log(data)
@@ -55,6 +55,7 @@ const postData = async (url='', data = {}) => {
     }
 }
 
+//UPDATE UI 
 const updateUI = async () => {
     const req = await fetch('/add');
     try{
@@ -69,22 +70,23 @@ const updateUI = async () => {
 }
 
 
-
+// When user clic the form
 const clickForm =  (e) => {
     const zip = document.getElementById('zip').value;
     const feel = document.getElementById('feelings').value;
     buildedUrl = urlAPI+zip+key;
-    console.log(`sending the url ${buildedUrl}`);
+    //console.log(`sending the url ${buildedUrl}`);
+    // getting data from API
     getAPIdata(buildedUrl)
     .then(
-        function(data){ 
+        (data) =>{ 
+            //posting data recived to endpoint
             postData('/addData', {temp: data.main.temp, date: newDate, feel: feel});
             }
     )
     .then(
-        function(newData){ 
-            updateUI();
-        }
+        //updating the UI with projectData
+        (newData)=>{ updateUI()}
         
     )
 
